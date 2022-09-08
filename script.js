@@ -107,7 +107,7 @@ function calculate(chosenOperation) {
       calculation = previous * current;
       break;
     case '/':
-      calculation = previous / current;
+      calculation = current === 0 ? 'ERROR' : previous / current;
       break;
 
     default:
@@ -118,7 +118,5 @@ function calculate(chosenOperation) {
   isCalculated = true;
   previousOperand.innerText = '';
 }
-
-function updateScreen() {}
 
 clearAll();
