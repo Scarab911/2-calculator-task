@@ -6,7 +6,7 @@ Techniques used is **HTML** for layout and **CSS** for styling. **JavaScript** w
 
 Calculator design somewhere from the google search.
 
-### Calculator asignment key points:
+### Calculator assignment key points:
 
 ---
 
