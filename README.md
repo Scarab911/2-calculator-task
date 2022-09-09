@@ -28,4 +28,4 @@ Calculator design somewhere from the google search.
 
 [Go Visit my profile and find out more about me](https://github.com/Scarab911)
 
-[Page hosted on GitHub](https://scarab911.github.io/4-WebsiteDesign/)
+[Page hosted on GitHub](https://scarab911.github.io/2-calculator-task/)
