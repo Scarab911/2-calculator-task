@@ -1,4 +1,3 @@
-console.log('calculator works!');
 let previousOperand = document.getElementById('equation');
 let currentOperand = document.getElementById('answer');
 let operation = null;
@@ -9,6 +8,8 @@ const allOperationButtons = document.querySelectorAll('[data-operation]');
 const allClearButton = document.querySelector('[data-all-clear]');
 const deleteButton = document.querySelector('[data-delete]');
 const equalsButton = document.querySelector('[data-equals]');
+
+const display = document.querySelector('.screen');
 
 //CLICK EVENTS
 
@@ -58,13 +59,10 @@ function clearAll() {
   currentOperand.innerText = '';
   operation = undefined;
   isCalculated = false;
-  console.log('all clear continue');
+  display.classList.remove('error');
 }
 
 function remove() {
-  //   let string = equation.innerText.toString();
-  //   let updatedString = string.substring(0, string.length - 1);
-  //   equation.innerText = updatedString;
   if (isCalculated) return;
   currentOperand.innerText = currentOperand.innerText.toString().slice(0, -1);
 }
@@ -83,16 +81,11 @@ function chooseOperation(chosenOperation) {
 
 function calculate(chosenOperation) {
   let calculation = 0;
-  console.log('skaicioujam');
 
   let currentOperation = chosenOperation;
-  console.log(chosenOperation);
 
   const previous = parseFloat(previousOperand.innerText.toString());
   const current = parseFloat(currentOperand.innerText.toString());
-
-  console.log(previous);
-  console.log(current);
 
   if (isNaN(previous) || isNaN(current)) return;
 
@@ -112,6 +105,9 @@ function calculate(chosenOperation) {
 
     default:
       return;
+  }
+  if (calculation === 'ERROR') {
+    display.classList.add('error');
   }
   currentOperand.innerText = calculation;
   operation = undefined;
